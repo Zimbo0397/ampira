@@ -1,0 +1,83 @@
+//- .preloader
+	//- .after
+.top-line
+	.info-line
+		.container
+			ul.list-inline
+				li
+					a(href="#").phone
+						i.fa.fa-phone(aria-hidden="true")
+						| (415) 555-0225
+				li
+					a(href="#")
+						i.fa.fa-envelope(aria-hidden="true")
+						| info@ampira.com
+				li
+					a(href="#")
+						i.fa.fa-map-marker(aria-hidden="true")
+						| Hamburg, Germany 
+				li
+					ul.list-inline
+						li
+							a(href="#") en
+						li
+							a(href="#") de
+						li
+							a(href="#") ru
+
+
+	.navigation
+		.container
+			ul#main-nav.list-inline.main-nav
+				li.brand-holder
+					.image-holder
+						img(src="img/icons/logo.jpg", alt="")
+				li(class= navigation == 'index' ? 'active' : '')
+					a(href="index.html") Home
+				li(class= navigation == 'serv' ? 'active' : '')
+					a(href="#services") Services
+				li(class= navigation == 'proj' ? 'active' : '')
+					a(href="#getstarted") Get started
+				li(class= navigation == 'news' ? 'active' : '')
+					a(href="#testimonials") Testimonials
+				li(class= navigation == 'about' ? 'active' : '')
+					a(href="#footer") Contact
+			a(href="#").mobile-nav-btn#mobile-nav-btn
+				span
+				span
+				span
+			ul#main-nav-mobile.main-nav-mobile
+				li(class= navigation == 'index' ? 'active' : '')
+					a(href="index.html") Home
+				li(class= navigation == 'serv' ? 'active' : '')
+					a(href="#services") Services
+				li(class= navigation == 'proj' ? 'active' : '')
+					a(href="#getstarted") Get started
+				li(class= navigation == 'news' ? 'active' : '')
+					a(href="#testimonials") Testimonials
+				li(class= navigation == 'about' ? 'active' : '')
+					a(href="#footer") Contact
+	.info-line.mobile
+		.container
+			ul.list-inline.info-list
+				li
+					a(href="#").phone
+						i.fa.fa-phone(aria-hidden="true")
+						| (415) 555-0225
+				li
+					a(href="#")
+						i.fa.fa-envelope(aria-hidden="true")
+						| info@ampira.com
+				li
+					a(href="#")
+						i.fa.fa-map-marker(aria-hidden="true")
+						| Hamburg, Germany 
+				li
+					ul.list-inline
+						li
+							a(href="#") en
+						li
+							a(href="#") de
+						li
+							a(href="#") ru
+		

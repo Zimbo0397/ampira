@@ -1,0 +1,261 @@
+@import _mixins
+
+*
+	box-sizing: border-box
+
+html
+	font: $font
+	color: $color
+	@media #{$media-uhd-up}
+		font-size: $font-size * 2
+body
+	margin: 0
+	-webkit-font-smoothing: antialiased
+	-webkit-tap-highlight-color: transparent
+	&.fixed
+		overflow: hidden
+		// &:after
+		// 	content: ''
+		// 	position: fixed
+		// 	top: 0
+		// 	left: 0
+		// 	width: 100%
+		// 	height: 100%
+		// 	background: rgba(0, 0, 0, 0.68)
+		// 	z-index: 51
+		&.client-ios
+			position: fixed
+			height: 100%
+			width: 100%
+
+a
+	border: none
+	outline: none
+	text-decoration: none
+	color: inherit
+
+p
+	margin: 0
+	margin-bottom: 10px
+
+span
+
+img
+	border: none
+	outline: none
+	max-width: 100%
+	vertical-align: middle
+
+ul
+	padding: 0
+	li
+		list-style: none
+	&.list-inline
+		& > li
+			display: inline-block
+
+h1, h2, h3, h4, h5, h6
+	margin: 0
+	margin-bottom: 10px
+	&:first-child
+		margin-top: 0
+h1, h2, h3, h4, h5, h6
+	color: #000
+	text-transform: uppercase
+.white
+	h1,h2,h3,h4,h5,h6
+		color: #353333
+h2
+	font-size: 1.6rem
+hr
+	border: 0
+	display: block
+	border-top: 1px solid $base-font-color
+	height: 1px
+	margin-top: 1rem
+	margin-bottom: 1rem
+	clear: both
+
+label
+	border-radius: 0
+
+button, input, select, textarea, a
+	font: $font
+	font-size: 1rem
+	&:focus,
+	&:active
+		outline-color: $main-color
+
+.button
+	background: #f5ab35
+	outline: 2px solid #fff
+	outline-offset: -7px
+	padding: 12px 28px
+	text-transform: uppercase
+	font-size: 0.7rem
+	font-weight: 700
+	color: #fff
+	transition: background .2s
+	display: inline-block
+	&.lg-button
+		padding: 6px 40px
+	&:hover
+		background: #6352d9
+		transition: background .2s
+
+//	SELECT
+select
+	appearance: none
+	border: 1px solid $base-font-color
+	outline-color: $main-color
+	&:-moz-focusring
+		color: transparent
+		text-shadow: none
+//	END SELECT
+
+// INPUTS & TEXTAREA
+input,
+textarea
+	outline-color: $main-color
+	font: $font
+	color: $base-font-color
+	font-size: 1rem
+	&::placeholder
+		font: $font
+		font-size: 1rem
+
+textarea
+
+input
+	appearance: none
+
+input[type='number']
+	&::-webkit-outer-spin-button, &::-webkit-inner-spin-button
+		-webkit-appearance: none
+	-moz-appearance: textfield
+//	END INPUTS & TEXTAREA
+
+
+// GRID
+.container
+	margin: 0 auto
+	width: 80%
+	position: relative
+	@media #{$media-sm}
+		width: 100%
+		padding: 0 15px
+
+.inline-layout
+	font-size: 0
+	letter-spacing: 0
+	& > *
+		display: inline-block
+		vertical-align: top
+		font: $font
+	&.col-1 > *
+		width: 100%
+	&.col-2 > *
+		width: 100 / 2 + %
+	&.col-3 > *
+		width: 100 / 3 + %
+		& > .double
+			width: 100 / 3 * 2 + %
+	&.col-4 > *
+		width: 100 / 4 + %
+		& > .double
+			width: 100 / 4 * 2 + %
+	&.col-5 > *
+		width: 100 / 5 + %
+		& > .double
+			width: 100 / 5 * 2 + %
+	&.col-6 > *
+		width: 100 / 6 + %
+		& > .double
+			width: 100 / 6 * 2 + %
+	&.col-7 > *
+		width: 100 / 7 + %
+		& > .double
+			width: 100 / 7 * 2 + %
+	&.col-8 > *
+		width: 100 / 8 + %
+		& > .double
+			width: 100 / 3 * 8 + %
+	&.col-9 > *
+		width: 100 / 9 + %
+		& > .double
+			width: 100 / 9 * 2 + %
+	&.col-10 > *
+		width: 100 / 10 + %
+		& > .double
+			width: 100 / 10 * 2 + %
+
+.hidden
+	display: none !important
+
+// image-holder
+.image-holder
+	overflow: hidden
+	position: relative
+	text-align: center
+	vertical-align: middle
+	img
+		object-fit: cover
+		vertical-align: middle
+		height: 100%
+		width: 100%
+	.fake-img
+		opacity: 0
+		position: relative
+		height: 100%
+		width: 100%
+		z-index: 1
+	.img
+		background:
+			position: 50% 50%
+			repeat: no-repeat
+			size: cover
+		height: 100%
+		position: absolute
+		left: 0
+		right: 0
+		top: 0
+
+.table-holder
+	max-width: 100%
+	overflow: auto
+
+.flex-vertical
+	display: flex
+	height: 100%
+	flex-flow: row wrap
+	align-items: center
+	justify-content: center
+
+//	MARKUP
+.align-center,
+.text-center
+	text-align: center
+
+.align-right,
+.text-right
+	text-align: right
+
+.align-left,
+.text-left
+	text-align: left
+
+.pull-left
+	float: left
+.pull-right
+	float: right
+
+.nowrap
+	white-space: nowrap
+
+.clearfix
+	&:before,
+	&:after
+		content: ''
+		height: 0
+		display: table
+		clear: both

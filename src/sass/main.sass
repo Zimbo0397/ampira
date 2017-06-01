@@ -1,0 +1,607 @@
+@import _mixins
+
+// //----------------------------------
+// // DEV
+// //----------------------------------
+// .chromeperfectpixel-initial-block iframe,
+// #chromeperfectpixel-supported-by
+// 	display: none !important
+// #__bs_notify__
+// 	display: none !important
+// 	opacity: 0 !important
+
+// //----------------------------------
+// // END DEV
+// //----------------------------------
+
+
+body
+	// &::-webkit-scrollbar
+
+
+//----------------------------------
+// TEST
+//----------------------------------
+section.test-block
+	margin: 100px 0
+//----------------------------------
+// END TEST
+//----------------------------------
+.top-line
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	background: #fff
+	z-index: 50
+	border-bottom: 2px solid #f5ab35
+	@media #{$media-xs-down}
+		max-height: 67px
+		overflow: hidden
+		transition: max-height .2s
+	&.opened
+		@media #{$media-xs-down}
+			max-height: 1000px
+			overflow: initial
+			transition: max-height .2s
+.info-line
+	position: relative
+	background: #6352d9
+	padding: 8px
+	@media #{$media-xs-down}
+		display: none
+	&.mobile
+		display: none
+		@media #{$media-xs-down}
+			display: block
+			padding: 1px
+	ul
+		color: #fff
+		text-align: right
+		margin: 0
+	a
+		margin-left: 10px
+		color: inherit
+		font-size: 0.7rem
+		i
+			margin-right: 10px
+		&.phone
+			position: absolute
+			top: 0.3rem
+			left: 0
+	.info-list
+		padding-left: 100px
+
+
+.navigation
+	text-align: right
+	padding: 13px
+	@media #{$media-xs-down}
+		padding: 5px
+	li
+		margin-left: 10px
+		line-height: 1.2em
+		padding: 0 5px
+		border-bottom: 2px solid transparent
+		transition: color .2s, border-color .2s
+		&:hover,
+		&.active
+			color: #f5ab35
+			border-color: #f5ab35
+			transition: color .2s, border-color .2s
+	.main-nav
+		@media #{$media-xs-down}
+			text-align: left
+			margin: 0
+		li
+			@media #{$media-xs-down}
+				display: none
+			&.brand-holder
+				@media #{$media-xs-down}
+					display: inline-block
+					position: static
+
+	a
+		text-transform: uppercase
+	.brand-holder
+		width: 6rem
+		position: absolute
+		top: -1rem
+		left: 0
+	.mobile-nav-btn
+		height: 76px
+		display: inline-block
+		padding: 26px
+		position: absolute
+		top: -7px
+		right: -5px
+		@media #{$media-xs-up}
+			display: none
+		span
+			height: 4px
+			width: 40px
+			background: #7b52d9
+			display: block
+			margin-bottom: 5px
+	.main-nav-mobile	
+		text-align: center
+		@media #{$media-xs-up}
+			display: none
+		li
+			border-color: transparent
+
+.main-slider
+	padding-top: 132px
+	position: relative
+	@media #{$media-xs-down}
+		padding-top: 67px
+	.image-holder
+		height: 680px
+		@media #{$media-xs-down}
+			height: 440px
+	.text-holder
+		position: absolute
+		top: 55%
+		left: 50%
+		transform: translateY(-50%) translateX(-50%)
+		color: #fff
+		text-transform: uppercase
+		font-size: 1.5rem
+		font-weight: 700
+		text-align: center
+		max-width: 25rem
+		max-height: 5.1rem
+		overflow: hidden
+		opacity: 0
+		transition-delay: 1s
+		transition: top 1s, opacity 1s
+		line-height: 1.2em
+		@media #{$media-xs-down}
+			max-height: 5.5rem
+		strong
+			color: #f5ab35
+	.owl-item
+		&.active
+			.text-holder
+				top: 50%
+				opacity: 1
+				transition-delay: 1s
+				transition: top 1s, opacity 1s
+	.owl-nav
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		width: 100%
+		margin: 0
+	.owl-prev
+		left: 0
+		transform: rotate(45deg) translateY(-50%)
+		border-bottom: 8px solid #f5ab35
+		border-left: 8px solid #f5ab35
+		border-right: 8px solid transparent
+		border-top: 8px solid transparent
+		transition: all .4s
+		&:hover
+			border-bottom: 8px solid #6352d9
+			border-left: 8px solid #6352d9
+			transition: all .4s
+
+	.owl-next
+		right: 0
+		transform: rotate(45deg) translateY(-50%)
+		border-top: 8px solid #f5ab35
+		border-right: 8px solid #f5ab35
+		border-left: 8px solid transparent
+		border-bottom: 8px solid transparent
+		transition: all .4s
+		&:hover
+			border-top: 8px solid #6352d9
+			border-right: 8px solid #6352d9
+			transition: all .4s
+	.owl-next,
+	.owl-prev
+		position: absolute
+		top: 0
+		height: 45px
+		width: 45px
+		position: absolute
+		top: 50%
+		right: 45px
+		border-radius: 4px
+		text-indent: -9999px
+		background: transparent !important
+		@media #{$media-xs-down}
+			display: none !important
+	.owl-dots
+		position: absolute
+		bottom: 10px
+		left: 50%
+		transform: translateX(-50%)
+		background: rgba(0, 0, 0, 0.41)
+		border-radius: 5px
+		margin: 0
+		padding: 5px 30px
+		@media #{$media-xs-down}
+			display: none !important
+		.owl-dot
+			line-height: 0
+			vertical-align: middle
+			&.active,
+			&:hover
+				span
+					background: #f5ab35
+			span
+				height: 20px
+				width: 20px
+				background: transparent
+				border: 1px solid #fff
+	.consultation
+		position: absolute
+		bottom: 150px
+		display: inline-block
+		z-index: 2
+		left: 50%
+		transform: translateX(-50%)
+		@media #{$media-xs-down}
+			font-size: 0.5em
+			bottom: 80px
+	
+
+.about-us
+	padding-top: 60px
+	.ab-block
+		padding-left: 52%
+		margin-bottom: 60px
+		height: 18rem
+		overflow: hidden
+		position: relative
+		@media #{$media-xs-down}
+			overflow: initial
+			height: auto
+			padding-left: 0
+		&:nth-child(even)
+			padding-left: 0
+			padding-right: 52%
+			padding-top: 0
+			@media #{$media-xs-down}
+				padding-right: 0
+			h3
+				color: #f5ab35
+			.image-holder
+				left: auto
+				right: 0
+				border-left: 5px solid #f5ab35
+				border-right: 0
+		.image-holder
+			position: absolute
+			top: 0
+			left: 0
+			width: 48%
+			height: 17rem
+			border-right: 5px solid #7b52d9
+			@media #{$media-xs-down}
+				position: relative
+				width: 100%
+				height: auto
+				margin-bottom: 20px
+		h3
+			color: #6352d9
+
+.get-start
+	padding: 100px 20px
+	text-align: center
+	p
+		color: #5f5d5d
+		a
+			text-decoration: underline
+
+.comand-slider
+	.image-holder
+		height: 320px
+		&:after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			width: 100%
+			height: 100%
+			background: #7b52d9
+			opacity: 0.4
+			transition: opacity .8s
+	.text-holder
+		position: absolute
+		left: 20px
+		bottom: 0px
+		color: #fff
+		opacity: 0.2
+		transition: opacity .8s
+		font-weight: 700
+		max-width: 230px
+	.owl-item
+		transform: scale(1)
+		&.center
+			transform: scale(1.1)
+			transition: transform .8s
+			z-index: 2
+			.image-holder
+				&:after
+					opacity: 0
+					transition: opacity .8s
+			.text-holder
+				bottom: 20px
+				transition: opacity .8s, bottom .8s
+				opacity: 1
+		// &.yellow
+		// 	.image-holder
+		// 		&:after
+		// 			background: red
+
+	.owl-stage-outer
+		padding: 10px 0
+	.owl-nav
+		position: absolute
+		top: 50%
+		transform: translateY(-50%)
+		width: 100%
+		margin: 0
+	.owl-prev
+		left: 0
+		transform: rotate(45deg) translateY(-50%)
+		border-bottom: 8px solid #f5ab35
+		border-left: 8px solid #f5ab35
+		border-right: 8px solid transparent
+		border-top: 8px solid transparent
+		transition: all .4s
+		&:hover
+			border-bottom: 8px solid #6352d9
+			border-left: 8px solid #6352d9
+			transition: all .4s
+	.owl-next
+		right: 0
+		transform: rotate(45deg) translateY(-50%)
+		border-top: 8px solid #f5ab35
+		border-right: 8px solid #f5ab35
+		border-left: 8px solid transparent
+		border-bottom: 8px solid transparent
+		transition: all .4s
+		&:hover
+			border-top: 8px solid #6352d9
+			border-right: 8px solid #6352d9
+			transition: all .4s
+	.owl-next,
+	.owl-prev
+		position: absolute
+		top: 0
+		height: 45px
+		width: 45px
+		position: absolute
+		top: 50%
+		right: 45px
+		border-radius: 4px
+		text-indent: -9999px
+		background: transparent !important
+		@media #{$media-xs-down}
+			display: none !important
+	.owl-dots
+		display: none
+
+
+.join
+	padding-top: 100px
+	text-align: center
+	padding-bottom: 40px
+	h3
+		font-size: 2em
+		line-height: 1.2em
+		color: #483d3d
+		margin-bottom: 20px
+		@media #{$media-xs-down}
+			font-size: 1.2em
+	p
+		font-size: 0.9em
+		color: #b1a7a7
+		small
+			font-size: 0.75em
+	.form-group
+		display: inline-block
+		padding-right: 60px
+		border: 1px solid #b1a7a9
+		padding: 10px
+		padding-right: 90px
+		border-radius: 3px
+		margin-top: 10px
+		@media #{$media-xs-down}
+			padding-right: 36px
+		input
+			border: none
+			padding: 0 10px
+		button
+			display: inline-block
+			position: absolute
+			top: 0
+			right: 0
+			background: #f5ab35
+			color: #fff
+			padding: 10px
+			&:hover
+				background: #6352d9
+				transition: background .2s
+
+
+.testimonials
+	text-align: center
+	padding-top: 110px
+	background: #f9f9f9
+	.btn-holder
+		margin-top: 40px
+	h3
+		margin-bottom: 40px
+	.image-holder
+		width: 70px
+		height: 70px
+		border-radius: 50%
+		display: inline-block
+		margin-bottom: 20px
+	p
+		font-size: 0.9em
+		color: #b1a7a7
+	.name
+		font-size: 0.9em
+		color: #b1a7a7
+		b
+			color: #000
+	.owl-dots
+		display: none
+
+.clients
+	text-align: center
+	padding-top: 110px
+	background: #f9f9f9
+	padding-bottom: 100px
+	.image-holder
+		width: 120px
+		height: 80px
+		display: inline-block
+	.owl-dots
+		display: none
+	.owl-nav
+		position: absolute
+		top: 0
+		left: 0
+		height: 100%
+		width: 100%
+		margin: 0
+		pointer-events: none
+	.owl-prev
+		left: 0
+		transform: rotate(45deg) translateY(-50%)
+		border-bottom: 3px solid #f5ab35
+		border-left: 3px solid #f5ab35
+		border-right: 3px solid transparent
+		border-top: 3px solid transparent
+		transition: all .4s
+		&:hover
+			border-bottom: 3px solid #6352d9
+			border-left: 3px solid #6352d9
+			transition: all .4s
+	.owl-next
+		right: 0
+		transform: rotate(45deg) translateY(-50%)
+		border-top: 3px solid #f5ab35
+		border-right: 3px solid #f5ab35
+		border-left: 3px solid transparent
+		border-bottom: 3px solid transparent
+		transition: all .4s
+		&:hover
+			border-top: 3px solid #6352d9
+			border-right: 3px solid #6352d9
+			transition: all .4s
+	.owl-next,
+	.owl-prev
+		pointer-events: initial
+		position: absolute
+		top: 0
+		height: 25px
+		width: 25px
+		position: absolute
+		top: 50%
+		right: 45px
+		border-radius: 4px
+		text-indent: -9999px
+		background: transparent !important
+		@media #{$media-xs-down}
+			display: none !important
+	.owl-dots
+		display: none
+
+.footer
+	background: #272242
+	color: #fff
+	padding-top: 40px
+	@media #{$media-xs-down}
+		text-align: center
+	h5
+		color: #fff
+		text-transform: none
+	p
+		color: #c7c7c7
+		margin-bottom: 0
+		&.gal
+			padding-left: 28px
+			position: relative
+			&:before
+				content: '\f00c'
+				font-family: "FontAwesome"
+				position: absolute
+				top: 2px
+				left: 2px
+				font-size: 14px
+				border: 1px solid #6c7d7d
+				height: 15px
+				width: 15px
+				line-height: 0
+				padding: 1px
+				line-height: 15px
+				color: #575858
+	.social-list
+		a
+			display: inline-block
+			height: 25px
+			width: 25px
+			text-align: center
+			padding: 3px
+			border-radius: 50%
+			border: 1px solid #7d7d7d
+			font-size: 0.8em
+			color: #d0cece
+	.form
+		max-width: 280px
+		@media #{$media-xs-down}
+			display: inline-block
+		input,
+		textarea
+			width: 100%
+			margin-bottom: 20px
+			padding: 3px
+			border: 1px solid #7d625c
+		textarea
+			height: 100px
+		button
+			display: inline-block
+			padding: 8px 28px
+	span
+		color: #7d7d7d
+		font-size: 0.8em
+	.text-block
+		margin-bottom: 20px
+	.ft-list
+		padding-right: 20px
+		@media #{$media-xs-down}
+			width: 100% !important
+			padding-right: 0
+	.services
+		.image-holder
+			width: 100px
+			margin-right: 10px
+			margin-bottom: 10px
+			height: 64px
+		@media #{$media-xs-down}
+			display: none
+	.underline
+		border-top: 1px solid #7d7d7d
+		margin-top: 20px
+		padding: 3px
+		text-align: right
+		@media #{$media-xs-down}
+			text-align: center
+		ul
+			margin: 0
+		li
+			margin-left: 10px
+			font-size: 0.8em
+			color: #c7c7c7
+			@media #{$media-xs-down}
+				margin: 2px 2px
+			a
+				@media #{$media-xs-down}
+					font-size: 0.7em

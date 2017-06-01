@@ -1,0 +1,23 @@
+{
+  "name": "Ampira",
+  "description": "Ampira project",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+  ],
+  "authors": [
+    "V_Zbrizskiy"
+  ],
+  "license": "no license",
+  "homepage": "https://github.com/Zimbo0397/ampira.git",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}
